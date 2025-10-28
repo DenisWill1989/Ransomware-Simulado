@@ -1,16 +1,1 @@
 
-from cryptography.fernet import Fernet
-
-# Gerar chave
-chave = Fernet.generate_key()
-fernet = Fernet(chave)
-
-# Criptografar arquivo
-with open('teste.txt', 'rb') as file:
-    dados = file.read()
-dados_cript = fernet.encrypt(dados)
-with open('teste.txt', 'wb') as file:
-    file.write(dados_cript)
-
-print("Arquivo criptografado. Chave:", chave.decode())
-# Ransomware-Simulado
